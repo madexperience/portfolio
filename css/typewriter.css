@@ -1,0 +1,94 @@
+h2 {
+  font-size: 8vmin;
+  color: #8bf;
+  text-align: left;
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  margin: 1rem 0 1rem 2rem;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
+}
+
+/* Typewriter effect 1 */
+@keyframes typing {
+  0.0000%, 18.2326% { content: ""; }
+  1.1395%, 17.0930% { content: "c"; }
+  2.2791%, 15.9535% { content: "co"; }
+  3.4186%, 14.8140% { content: "cod"; }
+  4.5581%, 13.6744% { content: "code"; }
+  5.6977%, 12.5349% { content: "coder"; }
+
+  21.6512%, 42.1628% { content: ""; }
+  22.7907%, 41.0233% { content: "a"; }
+  23.9302%, 39.8837% { content: "ar"; }
+  25.0698%, 38.7442% { content: "art"; }
+  26.2093%, 37.6047% { content: "arti"; }
+  27.3488%, 36.4651% { content: "artis"; }
+  28.4884%, 35.3256% { content: "artist"; }
+
+  45.5814%, 66.0930% { content: ""; }
+  46.7209%, 64.9535% { content: "r"; }
+  47.8605%, 63.8140% { content: "ro"; }
+  49.0000%, 62.6744% { content: "rob"; }
+  50.1395%, 61.5349% { content: "robl"; }
+  51.2791%, 60.3953% { content: "roblo"; }
+  52.4186%, 59.2558% { content: "roblox"; }
+
+  69.5116%, 87.7442% { content: ""; }
+  70.6512%, 86.6047% { content: "h"; }
+  71.7907%, 85.4651% { content: "hu"; }
+  72.9302%, 84.3256% { content: "hum"; }
+  74.0698%, 83.1860% { content: "huma"; }
+  75.2093%, 82.0465% { content: "human"; }
+}
+
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  --caret: #b2a6ef;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+.typewriter.thick::after {
+  border-right: 1ch solid var(--caret);
+}
+
+.typewriter.nocaret::after {
+  border-right: 0;
+}
+
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+  
+  @keyframes sequencePopup {
+    0%, 100% { content: "developer"; }
+    25% { content: "writer"; }
+    50% { content: "reader"; }
+    75% { content: "human"; }
+  }
+
+  .typewriter::before {
+    content: "developer";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+/**/
